@@ -1,0 +1,73 @@
+{
+  "name": "@socialscrape/ai-sdk",
+  "version": "0.1.0",
+  "description": "SocialScrape tools for the Vercel AI SDK: social media profiles, posts, comments, search and video transcripts across 29 platforms.",
+  "keywords": [
+    "ai-sdk",
+    "vercel",
+    "ai",
+    "tools",
+    "socialscrape",
+    "social media",
+    "api",
+    "tiktok",
+    "instagram",
+    "youtube",
+    "transcripts"
+  ],
+  "homepage": "https://socialscrape.dev/docs/ai-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SocialScraper/socialscrape-ai-sdk.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "socialscrape": "^0.1.2"
+  },
+  "peerDependencies": {
+    "ai": "^6.0.0 || ^7.0.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "ai": "7.0.173",
+    "tsup": "8.5.1",
+    "typescript": "5.9.3",
+    "vitest": "^3.2.4",
+    "zod": "^4.1.0"
+  }
+}
